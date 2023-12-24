@@ -10,7 +10,7 @@ const typeDefs = `
 
 const useTypeExists = (store, name) => type => {
   const types = store.getState().schemaCustomization.types;
-  const plugin = types.find(node => node.plugin.name === name);
+  const plugin = types.find(node => node.plugin && node.plugin.name === name);
 
   if (plugin === undefined) {
     return false;
